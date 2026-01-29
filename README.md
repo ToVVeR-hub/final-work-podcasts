@@ -16,11 +16,11 @@
 ## Структура проекта (сокращённо)
 
 src/
-├── app/ # Инициализация приложения
-├── pages/ # Страницы (Tracks, Login, Profile)
-├── widgets/ # Крупные UI-блоки (Player, Header)
-├── features/ # Фичи (auth, favorites)
-├── entities/ # Бизнес-сущности (track, player)
-├── shared/ # Общие утилиты, иконки, API
-├── styles/ # Глобальные стили
-└── main.tsx
+- app/ # Инициализация приложения
+- pages/ # Страницы (Tracks, Login, Profile)
+- widgets/ # Крупные UI-блоки (Player, Header)
+- features/ # Фичи (auth, favorites)
+- entities/ # Бизнес-сущности (track, player)
+- shared/ # Общие утилиты, иконки, API
+- styles/ # Глобальные стили
+- main.tsx
