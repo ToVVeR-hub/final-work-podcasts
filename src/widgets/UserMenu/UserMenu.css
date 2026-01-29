@@ -1,0 +1,195 @@
+/* ------------------------------ */
+/* Обёртка меню                   */
+/* ------------------------------ */
+
+.user-menu-wrapper {
+  position: relative;
+}
+
+/* ------------------------------ */
+/* Кнопка пользователя            */
+/* ------------------------------ */
+
+.user-menu {
+  width: 246px;
+  height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  padding: 2.5px 10px;
+
+  background: #f5f5f5;
+  border-radius: 30px;
+  border: none;
+
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.user-menu:hover,
+.user-menu:focus-visible {
+  background: #eeeeee;
+}
+
+.user-menu:active,
+.user-menu--open {
+  box-shadow: 0 0 0 1px #fc6d3e;
+}
+
+/* Аватар */
+.user-menu__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Имя пользователя */
+.user-menu__name {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+
+  color: #171717;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Стрелка */
+.user-menu__chevron {
+  width: 16px;
+  height: 16px;
+  color: #fc6d3e;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.user-menu--open .user-menu__chevron {
+  transform: rotate(90deg);
+}
+
+/* ------------------------------ */
+/* Выпадающее меню                */
+/* ------------------------------ */
+
+.user-menu__dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+
+  min-width: 200px;
+
+  padding: 6px;
+  border-radius: 16px;
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+
+  z-index: 100;
+
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  pointer-events: none;
+
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease;
+}
+
+.user-menu__dropdown--open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* ------------------------------ */
+/* Пункты меню                    */
+/* ------------------------------ */
+
+.user-menu__item {
+  width: 100%;
+  padding: 10px 14px;
+
+  background: none;
+  border: none;
+  border-radius: 10px;
+
+  text-align: left;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #171717;
+
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.user-menu__item:hover,
+.user-menu__item:focus-visible {
+  background: #f5f5f5;
+}
+
+.user-menu__item--danger {
+  color: #e14b4b;
+}
+
+.user-menu__item--danger:hover,
+.user-menu__item--danger:focus-visible {
+  background: rgba(225, 75, 75, 0.08);
+}
+
+/* ------------------------------ */
+/* Мобильная версия               */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+  .user-menu {
+    height: auto;
+    max-width: 100px;
+    padding: 0;
+    background: none;
+  }
+
+  .user-menu__avatar {
+    width: 25px;
+    height: 25px;
+  }
+
+  .user-menu__name {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    max-width: fit-content;
+  }
+
+  .user-menu__chevron {
+    display: none;
+  }
+}

@@ -1,0 +1,75 @@
+/* ------------------------------ */
+/* Основной контейнер             */
+/* ------------------------------ */
+
+.mode-switcher {
+  display: none;
+  justify-content: center;
+  gap: 19px;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------ */
+/* Кнопки                         */
+/* ------------------------------ */
+
+.mode-switcher__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  background: #ffffff;
+  border: none;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.06em;
+
+  color: #11253d;
+
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Активное состояние */
+.mode-switcher__button--active {
+  background: #fc6d3e;
+  color: #ffffff;
+}
+
+/* Иконка */
+.mode-switcher__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Hover (только неактивные) */
+.mode-switcher__button:not(.mode-switcher__button--active):hover {
+  box-shadow: 0 0 0 1px rgba(17, 37, 61, 0.15);
+}
+
+/* ------------------------------ */
+/* Адаптивность                   */
+/* ------------------------------ */
+
+@media (max-width: 1024px) {
+  .mode-switcher {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .mode-switcher {
+    justify-content: flex-start;
+  }
+}

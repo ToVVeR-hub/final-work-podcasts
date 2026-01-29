@@ -1,0 +1,72 @@
+/* ------------------------------ */
+/* Основной контейнер             */
+/* ------------------------------ */
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 15px 12px 14px;
+  border-radius: 30px;
+
+  cursor: text;
+  background: #f5f5f5;
+  transition: box-shadow 0.2s ease;
+}
+
+/* ------------------------------ */
+/* Состояния (hover, focus)       */
+/* ------------------------------ */
+
+.search:hover {
+  box-shadow: 0 0 0 1px black;
+}
+
+.search:hover .search__icon {
+  color: black;
+}
+
+.search:focus-within {
+  box-shadow: 0 0 0 1px #fc6d3e;
+}
+
+.search:focus-within .search__icon {
+  color: #fc6d3e;
+}
+
+/* ------------------------------ */
+/* Иконка                         */
+/* ------------------------------ */
+
+.search__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #aaaaaa;
+  transition: color 0.2s ease;
+}
+
+/* ------------------------------ */
+/* Поле ввода                     */
+/* ------------------------------ */
+
+.search__input {
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #171717;
+
+  width: 100%;
+}
+
+.search__input::placeholder {
+  color: #a4a4a4;
+}

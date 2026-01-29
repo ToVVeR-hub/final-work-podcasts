@@ -1,0 +1,88 @@
+/* ------------------------------ */
+/* Оверлей (фон)                  */
+/* ------------------------------ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+
+  z-index: 1000;
+}
+
+.modal--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ------------------------------ */
+/* Само модальное окно            */
+/* ------------------------------ */
+
+.modal__content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+
+  width: 100%;
+  max-width: 520px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  transform: scale(0.96) translateY(10px);
+  opacity: 0;
+
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+
+.modal--visible .modal__content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------ */
+/* Кнопка закрытия                */
+/* ------------------------------ */
+
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-size: 20px;
+  line-height: 1;
+  color: #999999;
+  outline: none;
+
+  transition: color 0.2s ease;
+}
+
+.modal__close:hover,
+.modal__close:focus-visible {
+  color: #e14b4b;
+}
+
+/* ------------------------------ */
+/* Адаптивность                   */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+  .modal__content {
+    max-width: 90vw;
+    padding: 16px;
+  }
+}

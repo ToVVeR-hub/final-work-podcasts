@@ -1,0 +1,75 @@
+/* ------------------------------ */
+/* Основной контейнер             */
+/* ------------------------------ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ------------------------------ */
+/* Кнопки                         */
+/* ------------------------------ */
+
+.pagination__button {
+  min-width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #171717;
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pagination__button:hover,
+.pagination__button:focus-visible {
+  border-color: #fc6d3e;
+  background: #eeeeee;
+}
+
+.pagination__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Активная страница */
+.pagination__button--active {
+  border-color: #fc6d3e;
+  background: #fc6d3e;
+  color: #ffffff;
+  font-weight: 700;
+  pointer-events: none;
+  transform: scale(1.1);
+}
+
+/* Навигационные кнопки (стрелки) */
+.pagination__button--nav {
+  border: none;
+  background: none;
+  font-size: 20px;
+}
+
+.pagination__button--nav:hover,
+.pagination__button--nav:focus-visible {
+  color: #fc6d3e;
+  transform: scale(1.3);
+}

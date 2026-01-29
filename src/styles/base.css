@@ -1,0 +1,50 @@
+/* ------------------------------ */
+/* Базовые стили документа        */
+/* ------------------------------ */
+
+html {
+  font-family: "Actor", sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #171717;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ------------------------------ */
+/* Формы и интерактивные элементы */
+/* ------------------------------ */
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Убираем стандартные отступы у списков и параграфов */
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}

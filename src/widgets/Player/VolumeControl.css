@@ -1,0 +1,109 @@
+/* ------------------------------ */
+/* Основной контейнер             */
+/* ------------------------------ */
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ------------------------------ */
+/* Кнопка mute/unmute             */
+/* ------------------------------ */
+
+.volume-control__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 16px;
+  min-height: 16px;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  color: #aaaaaa;
+  cursor: pointer;
+  outline: none;
+
+  transition: color 0.2s ease;
+}
+
+.volume-control__btn:hover,
+.volume-control__btn:focus-visible {
+  color: #fc6d3e;
+}
+
+.volume-control__btn--muted {
+  color: #e14b4b;
+}
+
+/* Перечёркивание при mute */
+.volume-control__btn--muted::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  width: 80%;
+  height: 2px;
+
+  background: currentColor;
+  transform: rotate(-45deg);
+}
+
+.volume-control__btn--muted + .volume-control__slider {
+  opacity: 0.5;
+}
+
+/* ------------------------------ */
+/* Слайдер громкости              */
+/* ------------------------------ */
+
+.volume-control__slider {
+  width: 70px;
+  height: 4px;
+
+  border-radius: 39px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+
+  background: linear-gradient(
+    to right,
+    #fc6d3e 0%,
+    #fc6d3e var(--progress),
+    #e8e8e8 var(--progress),
+    #e8e8e8 100%
+  );
+}
+
+.volume-control__slider::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  background: #fc6d3e;
+  cursor: pointer;
+}
+
+/* Кастомный thumb */
+.volume-control__slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  background: #fc6d3e;
+  border: none;
+  cursor: pointer;
+}
+
+/* Фокус */
+.volume-control__slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(252, 109, 62, 0.3);
+}

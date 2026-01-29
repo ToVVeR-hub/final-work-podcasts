@@ -1,0 +1,126 @@
+/* ------------------------------ */
+/* Основные стили страницы        */
+/* ------------------------------ */
+
+.tracks-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 30px 20px 0;
+}
+
+.tracks-page--player-active {
+  padding-bottom: 120px;
+}
+
+/* ------------------------------ */
+/* Body и Content                 */
+/* ------------------------------ */
+
+.tracks-page__body {
+  min-height: 100vh;
+  display: flex;
+  height: 100%;
+}
+
+.tracks-page__content {
+  flex: 1;
+  min-height: auto;
+  padding: 35px 0 0 46px;
+}
+
+/* ------------------------------ */
+/* Состояния (загрузка, ошибка, пусто) */
+/* ------------------------------ */
+
+.tracks-page__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  gap: 1rem;
+  color: #888;
+}
+
+.tracks-page__state-icon {
+  color: #fc6d3e;
+}
+
+.tracks-page__state-text {
+  font-weight: 400;
+  font-size: 30px;
+  color: #888;
+  max-width: 360px;
+}
+
+/* Анимация загрузки */
+.tracks-page__animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Состояние ошибки */
+.tracks-page__state-icon--error,
+.tracks-page__state-text--error {
+  color: #e53935;
+}
+
+/* ------------------------------ */
+/* Заголовок                      */
+/* ------------------------------ */
+
+.tracks-page__title {
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 0.03em;
+  color: #171717;
+  margin: 0 0 22px;
+}
+
+/* ------------------------------ */
+/* Пагинация                      */
+/* ------------------------------ */
+
+.tracks-page__pagination {
+  min-height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* ------------------------------ */
+/* Анимации                       */
+/* ------------------------------ */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------------------------------ */
+/* Адаптивность                   */
+/* ------------------------------ */
+
+@media (max-width: 1024px) {
+  .tracks-page {
+    padding: 20px 16px 0 14px;
+  }
+
+  .tracks-page--player-active {
+    padding-bottom: 50px;
+  }
+
+  .tracks-page__content {
+    padding: 0;
+  }
+
+  .tracks-page__title {
+    display: none;
+  }
+}

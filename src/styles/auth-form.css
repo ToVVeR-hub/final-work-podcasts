@@ -1,0 +1,121 @@
+/* ------------------------------ */
+/* Основная форма                 */
+/* ------------------------------ */
+
+.auth-form {
+  width: 100%;
+  max-width: 360px;
+  margin: 20vh auto;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ------------------------------ */
+/* Заголовок                      */
+/* ------------------------------ */
+
+.auth-form__title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+/* ------------------------------ */
+/* Поля ввода                     */
+/* ------------------------------ */
+
+.auth-form__input {
+  padding: 15px 12px 14px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 0 1px #cccccc;
+  background: #f5f5f5;
+
+  font-size: 16px;
+  color: #171717;
+
+  transition: box-shadow 0.2s ease;
+  outline: none;
+}
+
+.auth-form__input:hover {
+  box-shadow: 0 0 0 2px #000000;
+}
+
+.auth-form__input:focus-visible {
+  box-shadow: 0 0 0 2px #fc6d3e;
+}
+
+/* ------------------------------ */
+/* Кнопка отправки                */
+/* ------------------------------ */
+
+.auth-form__button {
+  min-width: 200px;
+  padding: 12px 24px;
+  margin: 0 auto;
+
+  border: 1px solid #fc6d3e;
+  border-radius: 10px;
+  background: #fc6d3e;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+
+  transition: background-color 0.2s ease;
+}
+
+.auth-form__button:hover,
+.auth-form__button:focus-visible {
+  background: #e65c32;
+}
+
+.auth-form__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ------------------------------ */
+/* Ссылка / переключение          */
+/* ------------------------------ */
+
+.auth-form__link {
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background: none;
+
+  color: #999999;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.auth-form__link:hover,
+.auth-form__link:focus-visible {
+  color: #fc6d3e;
+  opacity: 1;
+}
+
+/* ------------------------------ */
+/* Ошибки                         */
+/* ------------------------------ */
+
+.auth-form__error {
+  font-size: 13px;
+  color: #e54848;
+  text-align: center;
+  margin: 0;
+}

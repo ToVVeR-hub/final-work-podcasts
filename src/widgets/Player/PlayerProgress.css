@@ -1,0 +1,80 @@
+/* ------------------------------ */
+/* Основной контейнер             */
+/* ------------------------------ */
+
+.player-progress {
+  width: 100%;
+  height: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ------------------------------ */
+/* Слайдер прогресса              */
+/* ------------------------------ */
+
+.player-progress__slider {
+  width: 100%;
+  max-width: 609px;
+  height: 4px;
+
+  border-radius: 75px;
+  appearance: none;
+  cursor: pointer;
+
+  background: linear-gradient(
+    to right,
+    #fc6d3e 0%,
+    #fc6d3e var(--progress),
+    #e8e8e8 var(--progress),
+    #e8e8e8 100%
+  );
+}
+
+/* Убираем стандартный thumb */
+.player-progress__slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.player-progress__slider::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: none;
+}
+
+/* Фокус */
+.player-progress__slider:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(252, 109, 62, 0.4);
+}
+
+/* ------------------------------ */
+/* Время                          */
+/* ------------------------------ */
+
+.player-progress__time {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  color: #aaaaaa;
+}
+
+/* ------------------------------ */
+/* Мобильная версия               */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+  .player-progress {
+    justify-content: space-between;
+  }
+
+  .player-progress__slider {
+    max-width: none;
+  }
+}

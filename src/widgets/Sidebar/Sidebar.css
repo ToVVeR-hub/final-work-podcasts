@@ -1,0 +1,90 @@
+/* ------------------------------ */
+/* Основной контейнер             */
+/* ------------------------------ */
+
+.sidebar {
+  width: 290px;
+  min-height: 100%;
+  padding: 37px 0;
+
+  background: #f5f5f5;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------ */
+/* Блок кнопок                    */
+/* ------------------------------ */
+
+.sidebar__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ------------------------------ */
+/* Кнопка                         */
+/* ------------------------------ */
+
+.sidebar__button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 9px 30px;
+
+  background: transparent;
+  border: none;
+
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+
+  color: #171717;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: background 0.2s ease;
+}
+
+.sidebar__button:hover,
+.sidebar__button:focus-visible {
+  background: #eeeeee;
+}
+
+.sidebar__button--active {
+  background: #ffffff;
+}
+
+/* ------------------------------ */
+/* Иконка                         */
+/* ------------------------------ */
+
+.sidebar__icon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+  color: #fc6d3e;
+}
+
+/* ------------------------------ */
+/* Текст                          */
+/* ------------------------------ */
+
+.sidebar__text {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ------------------------------ */
+/* Адаптивность                   */
+/* ------------------------------ */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}
