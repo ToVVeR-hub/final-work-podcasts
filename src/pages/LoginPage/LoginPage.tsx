@@ -55,7 +55,10 @@ function LoginPage() {
         type="text"
         placeholder="Имя пользователя"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => {
+          setUsername(e.target.value);
+          setFormError(null);
+        }}
         autoComplete="username"
         required
         minLength={3}
@@ -67,7 +70,10 @@ function LoginPage() {
         type="password"
         placeholder="Пароль"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => {
+          setPassword(e.target.value);
+          setFormError(null);
+        }}
         autoComplete="current-password"
         required
         minLength={6}

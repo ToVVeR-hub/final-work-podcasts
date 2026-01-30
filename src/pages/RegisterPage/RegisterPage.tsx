@@ -59,7 +59,10 @@ function RegisterPage() {
         type="text"
         placeholder="Имя пользователя"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => {
+          setUsername(e.target.value);
+          setFormError(null);
+        }}
         autoComplete="username"
         required
         minLength={3}
@@ -71,7 +74,10 @@ function RegisterPage() {
         type="password"
         placeholder="Пароль"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => {
+          setPassword(e.target.value);
+          setFormError(null);
+        }}
         autoComplete="new-password"
         required
         minLength={6}
